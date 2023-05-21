@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>system.conf</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<style id="styleThumbColor"></style>
+<style id="styleTrackColor"></style>
+<style id="styleColor"></style>
+<style id="styleWidthStyle"></style>
+<style id="styleWidth"></style>
+<style id="styleBorderRadius"></style>
+<style id="styleBorder"></style>
+
+<div class="appContainer">
+  <div class="instructions slide-left">
+    <h2>Instructions</h2>
+    <p>Use the below controls to customize the browser's scrollbar and then copy the css to use in your own websites!<br><br> Note - I recommend trying out on different browsers to see how your scrollbar will be styled elsewhere.</p>
+  </div>
+  <div class="app">
+    <div class="scrollbarControls">
+      <h2>Controls</h2>
+      <ul>
+        <li>
+          <div>
+            <label for="thumbColor">Scrollbar Thumb:</label>
+          </div>
+          <div>
+            <input type="color" id="thumbColor" name="thumbColor" value="#8f54a0">
+          </div>
+        </li>
+        <li>
+          <div>
+            <label for="trackColor">Scrollbar Track:</label>
+          </div>
+          <div>
+            <input type="color" id="trackColor" name="trackColor" value="#ffffff">
+          </div>
+        </li>
+        <li>
+          <div>
+            <label for="widthStyle">Scrollbar Width Style:</label>
+          </div>
+          <div>
+            <select id="widthStyle" name="widthStyle">
+              <option value="none">None</option>
+              <option value="thin">Thin</option>
+              <option value="auto" selected="selected">Auto</option>
+            </select> (Firefox only)
+          </div>
+        </li>
+        <li>
+          <div>
+            <label for="width">Scrollbar Width:</label>
+          </div>
+          <div>
+            <input type="number" id="width" name="width" value="16"> px
+          </div>
+        </li>
+        <li>
+          <div>
+            <label for="borderRadius">Scrollbar Border Radius:</label>
+          </div>
+          <div>
+            <input type="number" id="borderRadius" name="borderRadius" value="10"> px
+          </div>
+        </li>
+        <li>
+          <div>
+            <label for="borderWidth">Scrollbar Border Width:</label>
+          </div>
+          <div>
+            <input type="number" id="borderWidth" name="borderWidth" value="3"> px
+          </div>
+        </li>
+        <li>
+          <div>
+            <label for="borderStyle">Scrollbar Border Style:</label>
+          </div>
+          <div>
+            <select id="borderStyle" name="borderStyle">
+              <option value="none">None</option>
+              <option value="dotted">Dotted</option>
+              <option value="dashed">Dashed</option>
+              <option value="solid" selected="selected">Solid</option>
+              <option value="double">Double</option>
+              <option value="groove">Groove</option>
+              <option value="ridge">Ridge</option>
+              <option value="inset">Inset</option>
+              <option value="outset">Outset</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div>
+            <label for="borderColor">Scrollbar Border Color:</label>
+          </div>
+          <div>
+            <input type="color" id="borderColor" name="borderColor" value="#ffffff">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="scrollbarContainer">
+      <h2>Scroll me...</h2>
+      <img class="arrow" src="https://images.unsplash.com/photo-1499424180600-8d243b10320a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80">
+      <p>Sometimes, the content of an element is bigger than the element itself, but you still want people to be able to see all of it, so you set the css of the element to overflow: scroll to add a scrollbar to it.</p>
+      <p>Then, to your horror, an ugly grey scrollbar is added to your page, which totally ruins the themeing you've worked so hard on, so what can you do?</p>
+      <p>Well... It turns out that many modern browsers have pseudo element selectors that you can use to style the scrollbars on your page, and seeing as it can be a bit of a pain reloading a page again and again to see what each one does, I figured why not make a simple little pen to let you style scrollbars live in the browser, and then copy the code to your own website once you're done.</p>
+      <img class="pug" src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="A cute pug">
+      <p class="bigger">Hey there, don't mind me. I'm just chilling down here.</p>
+    </div>
+    <div class="code copySection">
+      <h2>Copy This Code</h2>
+      <pre id="cssCode">/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: <span class="displayWidthStyle">thin</span>;
+    scrollbar-color: <span class="displayThumbColor">blue</span> <span class="displayTrackColor">orange</span>;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: <span class="displayWidth">12</span>px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: <span class="displayTrackColor">orange</span>;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: <span class="displayThumbColor">blue</span>;
+    border-radius: <span class="displayBorderRadius">20</span>px;
+    border: <span class="displayBorderWidth">3</span>px <span class="displayBorderStyle">solid</span> <span class="displayBorderColor">orange</span>;
+  }</pre>
+      <button class="copy">Copy</button>
+    </div>
+    <div class="code" id="debugger">
+      <h2>Debugger</h2>
+      <pre id="styleChecker"></pre>
+    </div>
+  </div>
+</div>
+
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
